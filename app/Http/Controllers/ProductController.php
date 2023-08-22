@@ -34,7 +34,7 @@ class ProductController extends Controller
         $product->description = $request->description;
 
         $product->save();
-        return back()->withSuccess('Product Created Successfully');
+        return redirect('/')->with('success', 'Product Created Successfully');
     }
 
     public function edit($id){
@@ -65,7 +65,7 @@ class ProductController extends Controller
         $product->description = $request->description;
 
         $product->save();
-        return back()->withSuccess('Product Updated Successfully');
+        return redirect('/')->with('success', 'Product Updated Successfully');
     }
 
     public function destroy($id){
